@@ -10,6 +10,9 @@
 </div>
 
 # About
+Welcome to the Point-And-Click adventure game Engine (PACE)!
+
+This is a project developed by William Rågstad and is completely free to use. You can download the latest version of the game engine under the releases tab on Github.
 
 ## Startup screen
 This screen lets you chose to create a new game project or load an existing one.
