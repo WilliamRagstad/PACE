@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointAndClickEngine", "PointAndClickEngine\PointAndClickEngine.csproj", "{980FFD80-6853-4CEC-A91D-54CF58B8DF88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PACE_Controls", "PACE_Controls\PACE_Controls.csproj", "{11DCE0F7-45AD-475C-B230-94EDFB49181E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{980FFD80-6853-4CEC-A91D-54CF58B8DF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980FFD80-6853-4CEC-A91D-54CF58B8DF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980FFD80-6853-4CEC-A91D-54CF58B8DF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980FFD80-6853-4CEC-A91D-54CF58B8DF88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11DCE0F7-45AD-475C-B230-94EDFB49181E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11DCE0F7-45AD-475C-B230-94EDFB49181E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11DCE0F7-45AD-475C-B230-94EDFB49181E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11DCE0F7-45AD-475C-B230-94EDFB49181E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E3C134A-9420-42F3-BA15-C959FAF53A89}
+	EndGlobalSection
+EndGlobal
