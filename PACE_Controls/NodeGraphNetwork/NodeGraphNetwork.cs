@@ -14,7 +14,7 @@ namespace PACE_Controls
 		public NodeGraphNetwork()
 		{
 			GraphNodes = new List<GraphNode>();
-			CreateNode();
+			MouseMove += HandleMouseMove;
 		}
 
 		protected NodeGraphNetwork(SerializationInfo info, StreamingContext context)
@@ -23,40 +23,7 @@ namespace PACE_Controls
 			info.AddValue("GraphNodes", GraphNodes);
 		}
 
-		public GraphNode CreateNode()
-		{
-			var r = new Random();
-			int x = r.Next(Width);
-			int y = r.Next(Height);
-			Color c = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
-			Color hc = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
-			int radius = r.Next(10) + 10;
-			GraphNode node = new GraphNode(x, y, radius, c, hc);
-			GraphNodes.Add(node);
-			OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
-			return node;
-		}
-		public GraphNode CreateNode(int x, int y)
-		{
-			var r = new Random();
-			Color c = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
-			Color hc = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
-			int radius = r.Next(10) + 10;
-			GraphNode node = new GraphNode(x, y, radius, c, hc);
-			GraphNodes.Add(node);
-			OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
-			return node;
-		}
-		public GraphNode CreateNode(int x, int y, Color color, Color hoverColor)
-		{
-			var r = new Random();
-			int radius = r.Next(10) + 10;
-			GraphNode node = new GraphNode(x, y, radius, color, hoverColor);
-			GraphNodes.Add(node);
-			OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
-			return node;
-		}
-		public GraphNode CreateNode(int x, int y, Color color, Color hoverColor, int radius)
+		public GraphNode CreateNode(int x, int y, int radius, Color color, Color hoverColor)
 		{
 			GraphNode node = new GraphNode(x, y, radius, color, hoverColor);
 			GraphNodes.Add(node);
@@ -94,16 +61,22 @@ namespace PACE_Controls
 		}
 
 		private GraphNode _previousHoveredNode;
-		protected override void OnMouseMove(MouseEventArgs e)
+
+		private void HandleMouseMove(object sender, MouseEventArgs e)
 		{
 			GraphNode found = getNodeByMousePosition();
-			if (!found.Equals(_previousHoveredNode))
+			if (found == null && _previousHoveredNode != null)
 			{
 				_previousHoveredNode?.OnNodeHoverLeave(this, new NodeHoverLeaveEventArgs(found));
-				found?.OnNodeHoverEnter(this, new NodeHoverEnterEventArgs(found));
+				this.InvokePaint(this, new PaintEventArgs(CreateGraphics(), ClientRectangle));
+			}
+			if (found != null && !found.Equals(_previousHoveredNode))
+			{
+				_previousHoveredNode?.OnNodeHoverLeave(this, new NodeHoverLeaveEventArgs(found));
+				found.OnNodeHoverEnter(this, new NodeHoverEnterEventArgs(found));
+				this.InvokePaint(this, new PaintEventArgs(CreateGraphics(), ClientRectangle));
 			}
 			_previousHoveredNode = found;
-			base.OnMouseMove(e);
 		}
 
 		public object Clone()

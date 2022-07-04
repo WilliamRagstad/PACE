@@ -37,6 +37,7 @@ namespace PACE_Controls
 		private void Initialize()
 		{
 			currentColor = Color;
+			// Show hover colors per default
 			NodeHoverEnter += (sender, e) => currentColor = HoverColor;
 			NodeHoverLeave += (sender, e) => currentColor = Color;
 		}
