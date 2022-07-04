@@ -1,5 +1,4 @@
-﻿using PACE_Controls;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace PointAndClickEngine
@@ -14,6 +13,11 @@ namespace PointAndClickEngine
 		private void nodeGraphNetwork1_Click(object sender, EventArgs e)
 		{
 			nodeGraphNetwork1.CreateNode();
+		}
+
+		private void MainEditorForm_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
