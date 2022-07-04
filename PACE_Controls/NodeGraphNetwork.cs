@@ -1,9 +1,9 @@
-﻿using PACE_Controls.Events;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
+using PACE_Controls.Events;
 
 namespace PACE_Controls
 {
@@ -68,12 +68,13 @@ namespace PACE_Controls
 			GraphNodes.Add(node);
 			OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
 		}
-
+#nullable enable
 		private GraphNode? getNodeByMousePosition()
 		{
 			Point mousePoint = new Point(MousePosition.X, MousePosition.Y);
 			return GraphNodes.Find(n => n.IsInside(mousePoint, PointToScreen(new Point(n.X, n.Y))));
 		}
+#nullable restore
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
@@ -88,19 +89,20 @@ namespace PACE_Controls
 		protected override void OnClick(EventArgs e)
 		{
 			GraphNode found = getNodeByMousePosition();
-			if (found != null) found.OnNodeClicked(this, new NodeClickedEventArgs(found));
+			found?.OnNodeClicked(this, new NodeClickedEventArgs(found));
 			base.OnClick(e);
 		}
 
-		private GraphNode previousHoveredNode;
+		private GraphNode _previousHoveredNode;
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
 			GraphNode found = getNodeByMousePosition();
-			if (found != previousHoveredNode)
+			if (!found.Equals(_previousHoveredNode))
 			{
-				if (previousHoveredNode != null) previousHoveredNode.OnNodeHoverLeave(this, new NodeHoverLeaveEventArgs(found));
-				if (found != null) found.OnNodeHoverEnter(this, new NodeHoverEnterEventArgs(found));
+				_previousHoveredNode?.OnNodeHoverLeave(this, new NodeHoverLeaveEventArgs(found));
+				found?.OnNodeHoverEnter(this, new NodeHoverEnterEventArgs(found));
 			}
+			_previousHoveredNode = found;
 			base.OnMouseMove(e);
 		}
 

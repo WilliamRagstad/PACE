@@ -214,7 +214,6 @@ namespace PointAndClickEngine
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer_main;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem File;
         private System.Windows.Forms.ToolStripMenuItem Test;
