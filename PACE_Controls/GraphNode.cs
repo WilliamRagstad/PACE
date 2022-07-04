@@ -86,17 +86,19 @@ namespace PACE_Controls
 			e.Graphics.FillEllipse(new SolidBrush(currentColor), X - Radius, Y - Radius, 2 * Radius, 2 * Radius);
 		}
 
+#nullable enable
 		public void OnNodeClicked(object? sender, NodeClickedEventArgs e)
 		{
-			NodeClicked.Invoke(sender, e);
+			NodeClicked?.Invoke(sender, e);
 		}
 		public void OnNodeHoverEnter(object? sender, NodeHoverEnterEventArgs e)
 		{
-			NodeHoverEnter.Invoke(sender, e);
+			NodeHoverEnter?.Invoke(sender, e);
 		}
 		public void OnNodeHoverLeave(object? sender, NodeHoverLeaveEventArgs e)
 		{
-			NodeHoverLeave.Invoke(sender, e);
+			NodeHoverLeave?.Invoke(sender, e);
 		}
+#nullable restore
 	}
 }
