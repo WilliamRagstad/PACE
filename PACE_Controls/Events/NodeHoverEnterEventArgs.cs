@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PACE_Controls.Events
 {
-    public class NodeHoverEnterEventArgs : EventArgs
-    {
+	public class NodeHoverEnterEventArgs : EventArgs
+	{
 
-        public NodeHoverEnterEventArgs(GraphNode node)
-        {
-            Node = node;
-        }
+		public NodeHoverEnterEventArgs(GraphNode node)
+		{
+			Node = node;
+		}
 
-        public GraphNode Node { get; }
-    }
+		public GraphNode Node { get; }
+	}
 }
