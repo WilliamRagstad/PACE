@@ -134,6 +134,7 @@ namespace PointAndClickEngine
             // 
             // nodeGraphNetwork1
             // 
+            this.nodeGraphNetwork1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.nodeGraphNetwork1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nodeGraphNetwork1.Location = new System.Drawing.Point(5, 6);
             this.nodeGraphNetwork1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
