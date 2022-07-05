@@ -1,6 +1,7 @@
 ﻿using System;
+using PACE_Controls.NodeGraphNetwork;
 
-namespace PACE_Controls.Events
+namespace PACE_Controls.NodeGraphNetwork.Events
 {
 	public class NodeHoverEnterEventArgs : EventArgs
 	{

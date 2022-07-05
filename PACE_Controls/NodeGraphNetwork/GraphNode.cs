@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace PACE_Controls
+namespace PACE_Controls.NodeGraphNetwork
 {
 	public abstract class GraphNode
 	{

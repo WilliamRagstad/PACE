@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PACE_Controls.Events
+namespace PACE_Controls.NodeGraphNetwork.Events
 {
 	public class NodeClickedEventArgs : EventArgs
 	{
