@@ -7,7 +7,7 @@ using PACE_Controls.NodeGraphNetwork.Events;
 
 namespace PACE_Controls.NodeGraphNetwork
 {
-	internal interface IGraphNodeClickable : IGraphNodeHoverable
+	public interface IGraphNodeClickable : IGraphNodeHoverable
 	{
 #nullable enable
 		public void OnNodeClicked(object? sender, NodeClickedEventArgs e);

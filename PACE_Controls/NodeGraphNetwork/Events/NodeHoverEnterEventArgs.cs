@@ -6,11 +6,11 @@ namespace PACE_Controls.NodeGraphNetwork.Events
 	public class NodeHoverEnterEventArgs : EventArgs
 	{
 
-		public NodeHoverEnterEventArgs(GraphNode node)
+		public NodeHoverEnterEventArgs(IGraphNodeHoverable node)
 		{
 			Node = node;
 		}
 
-		public GraphNode Node { get; }
+		public IGraphNodeHoverable Node { get; }
 	}
 }

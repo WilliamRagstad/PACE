@@ -5,11 +5,11 @@ namespace PACE_Controls.NodeGraphNetwork.Events
 	public class NodeClickedEventArgs : EventArgs
 	{
 
-		public NodeClickedEventArgs(GraphNode node)
+		public NodeClickedEventArgs(IGraphNodeClickable node)
 		{
 			Node = node;
 		}
 
-		public GraphNode Node { get; }
+		public IGraphNodeClickable Node { get; }
 	}
 }

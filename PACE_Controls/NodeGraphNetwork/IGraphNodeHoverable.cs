@@ -7,7 +7,7 @@ using PACE_Controls.NodeGraphNetwork.Events;
 
 namespace PACE_Controls.NodeGraphNetwork
 {
-	internal interface IGraphNodeHoverable
+	public interface IGraphNodeHoverable
 	{
 		public bool IsHovered(int mouseX, int mouseY);
 
