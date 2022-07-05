@@ -12,7 +12,7 @@ namespace PointAndClickEngine.Util
 		public void SwitchTo(Form next, bool showAfter = false)
 		{
 			Hide();
-			new MainEditorForm().ShowDialog();
+			next.ShowDialog();
 			if (showAfter) Show();
 			else Close();
 		}

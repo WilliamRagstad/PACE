@@ -2,21 +2,27 @@
 using System.Drawing;
 using System.Windows.Forms;
 using PACE_Controls.NodeGraphNetwork;
+using PointAndClickEngine.Models;
 
 namespace PointAndClickEngine
 {
 	public partial class MainEditorForm : Form
 	{
-		public MainEditorForm()
+		public GameProject Project { get; }
+
+		public MainEditorForm(GameProject project)
 		{
 			InitializeComponent();
+			Project = project;
 		}
 
 		#region Helper functions
+
 		private Random _random = new Random();
 		private Color randomColor() => Color.FromArgb(_random.Next(255), _random.Next(255), _random.Next(255));
 		private int randomMax(int max) => _random.Next(max);
 		private int _idCounter = 0;
+
 		#endregion
 
 
