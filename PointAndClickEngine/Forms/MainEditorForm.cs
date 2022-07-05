@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using PACE_Controls.NodeGraphNetwork;
 
 namespace PointAndClickEngine
 {
@@ -14,17 +15,19 @@ namespace PointAndClickEngine
 		#region Helper functions
 		private Random _random = new Random();
 		private Color randomColor() => Color.FromArgb(_random.Next(255), _random.Next(255), _random.Next(255));
+		private int randomMax(int max) => _random.Next(max);
+		private int _idCounter = 0;
 		#endregion
 
-		private int randomMax(int max) => _random.Next(max);
 
 		private void nodeGraphNetwork1_Click(object sender, EventArgs e)
 		{
-			nodeGraphNetwork1.CreateNode(
+			nodeGraphNetwork1.AddNode(new GraphNodeColoredCircle(
+				_idCounter++,
 				randomMax(nodeGraphNetwork1.Width),
 				randomMax(nodeGraphNetwork1.Height),
 				randomMax(10) + 10,
-				randomColor(), randomColor());
+				randomColor(), randomColor()));
 		}
 
 		private void MainEditorForm_Load(object sender, EventArgs e)
