@@ -41,7 +41,7 @@ namespace PointAndClickEngine
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tabControl_mapEditor = new System.Windows.Forms.TabControl();
             this.tabPage_map1 = new System.Windows.Forms.TabPage();
-            this.nodeGraphNetwork1 = new PACE_Controls.NodeGraphNetwork();
+            this.nodeGraphNetwork1 = new PACE_Controls.NodeGraphNetwork.NodeGraphNetwork();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
@@ -225,7 +225,7 @@ namespace PointAndClickEngine
         private System.Windows.Forms.TabPage tabPage_map1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ListView listView1;
-        private PACE_Controls.NodeGraphNetwork nodeGraphNetwork1;
+        private PACE_Controls.NodeGraphNetwork.NodeGraphNetwork nodeGraphNetwork1;
     }
 }
 

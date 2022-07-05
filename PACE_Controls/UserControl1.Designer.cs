@@ -29,7 +29,7 @@ namespace PACE_Controls
         /// </summary>
         private void InitializeComponent()
         {
-            this.nodeGraphNetwork1 = new PACE_Controls.NodeGraphNetwork();
+            this.nodeGraphNetwork1 = new PACE_Controls.NodeGraphNetwork.NodeGraphNetwork();
             this.SuspendLayout();
             // 
             // nodeGraphNetwork1
@@ -55,6 +55,6 @@ namespace PACE_Controls
 
         #endregion
 
-        private NodeGraphNetwork nodeGraphNetwork1;
+        private NodeGraphNetwork.NodeGraphNetwork nodeGraphNetwork1;
     }
 }
