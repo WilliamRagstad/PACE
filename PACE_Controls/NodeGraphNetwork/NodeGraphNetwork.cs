@@ -36,31 +36,43 @@ namespace PACE_Controls.NodeGraphNetwork
 			_nodes.ForEach(n => n.OnPaint(e));
 		}
 
-#nullable enable
-		private List<GraphNode> _getNodesFromMousePosition()
+		private List<IGraphNodeHoverable> _getHoveredNodes()
 		{
 			Point mousePoint = PointToClient(new Point(MousePosition.X, MousePosition.Y));
-			return _nodes.FindAll(n => n is IGraphNodeHoverable h && h.IsHovered(mousePoint.X, mousePoint.Y));
+			return _nodes
+				.FindAll(n => n is IGraphNodeHoverable h && h.IsHovered(mousePoint.X, mousePoint.Y))
+				.ConvertAll(n => n as IGraphNodeHoverable) as List<IGraphNodeHoverable>;
 		}
-#nullable restore
+
+		private IGraphNodeHoverable? _getTopHoveredNode()
+		{
+			var matches = _getHoveredNodes();
+			if (matches.Count > 0)
+			{
+				// Last node is always on top of the others in depth
+				return matches[matches.Count - 1];
+			}
+			return null;
+		}
 
 		private void HandleClick(object sender, EventArgs e)
 		{
-			var matches = _getNodesFromMousePosition().FindAll(n => n is )
+			var matches = _getHoveredNodes()
+				.FindAll(n => n is IGraphNodeClickable)
+				.ConvertAll(n => n as IGraphNodeClickable);
 			if (matches.Count > 0)
 			{
+				// Last node is always on top of the others in depth
 				var last = matches[matches.Count - 1];
-				last
+				last.OnNodeClicked(this, new NodeClickedEventArgs(last as GraphNode));
 			}
-			found?.OnNodeClicked(this, new NodeClickedEventArgs(found));
-			base.OnClick(e);
 		}
 
 		private GraphNode _previousHoveredNode;
 
 		private void HandleMouseMove(object sender, MouseEventArgs e)
 		{
-			GraphNode found = _getNodesFromMousePosition();
+			var matches = _getHoveredNodes();
 			if (found == null && _previousHoveredNode != null)
 			{
 				_previousHoveredNode?.OnNodeHoverLeave(this, new NodeHoverLeaveEventArgs(found));

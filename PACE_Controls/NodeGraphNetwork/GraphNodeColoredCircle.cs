@@ -5,7 +5,7 @@ using PACE_Controls.NodeGraphNetwork.Events;
 
 namespace PACE_Controls.NodeGraphNetwork
 {
-	public class GraphNodeColoredCircle : GraphNode, IGraphNodeHoverable
+	public class GraphNodeColoredCircle : GraphNode, IGraphNodeClickable
 	{
 		public int Radius { get; }
 		public Color Color { get; }
@@ -26,7 +26,7 @@ namespace PACE_Controls.NodeGraphNetwork
 		public override void OnPaint(PaintEventArgs e) =>
 			e.Graphics.FillEllipse(new SolidBrush(currentColor), X - Radius, Y - Radius, 2 * Radius, 2 * Radius);
 
-		public override bool IsHovered(int mouseX, int mouseY) =>
+		public bool IsHovered(int mouseX, int mouseY) =>
 			Math.Abs(X - mouseX) <= Radius && Math.Abs(Y - mouseY) <= Radius;
 
 
