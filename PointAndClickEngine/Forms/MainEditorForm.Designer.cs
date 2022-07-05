@@ -75,6 +75,7 @@ namespace PointAndClickEngine
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl_mapEditor.SuspendLayout();
@@ -415,7 +416,8 @@ namespace PointAndClickEngine
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
             this.toolStripSeparator,
-            this.newToolStripButton});
+            this.newToolStripButton,
+            this.toolStripSeparator1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 667);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(491, 68);
@@ -469,6 +471,11 @@ namespace PointAndClickEngine
             this.listView1.Size = new System.Drawing.Size(491, 735);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 68);
             // 
             // MainEditorForm
             // 
@@ -546,6 +553,7 @@ namespace PointAndClickEngine
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton toolStripButton3;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 	}
 }
 
