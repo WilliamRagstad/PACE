@@ -30,9 +30,9 @@ namespace PointAndClickEngine
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainEditorForm));
-            System.Windows.Forms.ListViewGroup listViewGroup7 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewGroup listViewGroup8 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Hejsan");
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroup", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Hejsan");
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +64,6 @@ namespace PointAndClickEngine
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel_title = new System.Windows.Forms.ToolStripLabel();
             this.tabControl_mapEditor = new System.Windows.Forms.TabControl();
             this.tabPage_map1 = new System.Windows.Forms.TabPage();
             this.nodeGraphNetwork1 = new PACE_Controls.NodeGraphNetwork.NodeGraphNetwork();
@@ -78,7 +77,6 @@ namespace PointAndClickEngine
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -213,20 +211,20 @@ namespace PointAndClickEngine
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(252, 40);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(252, 40);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(249, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(312, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -234,7 +232,7 @@ namespace PointAndClickEngine
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(252, 40);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -243,7 +241,7 @@ namespace PointAndClickEngine
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(252, 40);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -252,18 +250,18 @@ namespace PointAndClickEngine
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(252, 40);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator6
             // 
             this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(249, 6);
+            this.toolStripSeparator6.Size = new System.Drawing.Size(312, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(252, 40);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(315, 40);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -332,8 +330,6 @@ namespace PointAndClickEngine
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(28, 28);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel_title,
-            this.toolStripSeparator9,
             this.toolStripButton2,
             this.toolStripSeparator10,
             this.toolStripButton4,
@@ -341,17 +337,9 @@ namespace PointAndClickEngine
             this.toolStrip1.Location = new System.Drawing.Point(0, 42);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
-            this.toolStrip1.Size = new System.Drawing.Size(1481, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1481, 40);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel_title
-            // 
-            this.toolStripLabel_title.Font = new System.Drawing.Font("Berlin Sans FB", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.toolStripLabel_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.toolStripLabel_title.Name = "toolStripLabel_title";
-            this.toolStripLabel_title.Size = new System.Drawing.Size(107, 41);
-            this.toolStripLabel_title.Text = "PACE";
             // 
             // tabControl_mapEditor
             // 
@@ -361,7 +349,7 @@ namespace PointAndClickEngine
             this.tabControl_mapEditor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tabControl_mapEditor.Name = "tabControl_mapEditor";
             this.tabControl_mapEditor.SelectedIndex = 0;
-            this.tabControl_mapEditor.Size = new System.Drawing.Size(983, 735);
+            this.tabControl_mapEditor.Size = new System.Drawing.Size(983, 742);
             this.tabControl_mapEditor.TabIndex = 3;
             // 
             // tabPage_map1
@@ -371,7 +359,7 @@ namespace PointAndClickEngine
             this.tabPage_map1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tabPage_map1.Name = "tabPage_map1";
             this.tabPage_map1.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tabPage_map1.Size = new System.Drawing.Size(975, 692);
+            this.tabPage_map1.Size = new System.Drawing.Size(975, 699);
             this.tabPage_map1.TabIndex = 0;
             this.tabPage_map1.Text = "tabPage1";
             this.tabPage_map1.UseVisualStyleBackColor = true;
@@ -384,7 +372,7 @@ namespace PointAndClickEngine
             this.nodeGraphNetwork1.Location = new System.Drawing.Point(5, 6);
             this.nodeGraphNetwork1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.nodeGraphNetwork1.Name = "nodeGraphNetwork1";
-            this.nodeGraphNetwork1.Size = new System.Drawing.Size(965, 680);
+            this.nodeGraphNetwork1.Size = new System.Drawing.Size(965, 687);
             this.nodeGraphNetwork1.TabIndex = 0;
             this.nodeGraphNetwork1.Text = "nodeGraphNetwork1";
             this.nodeGraphNetwork1.Click += new System.EventHandler(this.nodeGraphNetwork1_Click);
@@ -392,7 +380,7 @@ namespace PointAndClickEngine
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 89);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 82);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -404,7 +392,7 @@ namespace PointAndClickEngine
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl_mapEditor);
-            this.splitContainer1.Size = new System.Drawing.Size(1481, 735);
+            this.splitContainer1.Size = new System.Drawing.Size(1481, 742);
             this.splitContainer1.SplitterDistance = 491;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 4;
@@ -418,7 +406,7 @@ namespace PointAndClickEngine
             this.toolStripSeparator,
             this.newToolStripButton,
             this.toolStripSeparator1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 667);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 674);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(491, 68);
             this.toolStrip2.TabIndex = 1;
@@ -458,22 +446,22 @@ namespace PointAndClickEngine
             // listView1
             // 
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            listViewGroup7.Header = "ListViewGroup";
-            listViewGroup7.Name = "Group 1";
-            listViewGroup8.Header = "ListViewGroup";
-            listViewGroup8.Name = "Group 2";
+            listViewGroup1.Header = "ListViewGroup";
+            listViewGroup1.Name = "Group 1";
+            listViewGroup2.Header = "ListViewGroup";
+            listViewGroup2.Name = "Group 2";
             this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup7,
-            listViewGroup8});
+            listViewGroup1,
+            listViewGroup2});
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4});
+            listViewItem1});
             this.listView1.LabelEdit = true;
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(491, 735);
+            this.listView1.Size = new System.Drawing.Size(491, 742);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -482,7 +470,7 @@ namespace PointAndClickEngine
             this.toolStripButton2.Image = global::PointAndClickEngine.Properties.Resources.Categories_applications_development_icon;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(91, 41);
+            this.toolStripButton2.Size = new System.Drawing.Size(91, 34);
             this.toolStripButton2.Text = "Build";
             // 
             // toolStripButton4
@@ -490,23 +478,18 @@ namespace PointAndClickEngine
             this.toolStripButton4.Image = global::PointAndClickEngine.Properties.Resources.Actions_flag_icon;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(82, 41);
+            this.toolStripButton4.Size = new System.Drawing.Size(82, 34);
             this.toolStripButton4.Text = "Run";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 47);
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 47);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 47);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 40);
             // 
             // MainEditorForm
             // 
@@ -544,7 +527,6 @@ namespace PointAndClickEngine
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel_title;
         private System.Windows.Forms.TabControl tabControl_mapEditor;
         private System.Windows.Forms.TabPage tabPage_map1;
         private System.Windows.Forms.SplitContainer splitContainer1;
@@ -585,7 +567,6 @@ namespace PointAndClickEngine
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
 		private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton toolStripButton2;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
 		private System.Windows.Forms.ToolStripButton toolStripButton4;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
