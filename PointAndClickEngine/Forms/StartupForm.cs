@@ -45,7 +45,7 @@ This is a project developed by William Rågstad and is free to use.", "PACE | Ab
 					MessageBox.Show("The selected folder does not exist!", "Invalid folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
-				StartEditor(GameProject.LoadProjectFolder(folderDialog.SelectedPath));
+				StartEditor(GameObjectSerializer.LoadFile<GameProject>(folderDialog.SelectedPath));
 			}
 		}
 	}
