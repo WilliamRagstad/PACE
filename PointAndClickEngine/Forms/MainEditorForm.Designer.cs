@@ -489,7 +489,6 @@ namespace PointAndClickEngine
             // 
             // listView1
             // 
-            this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             listViewGroup1.CollapsedState = System.Windows.Forms.ListViewGroupCollapsedState.Expanded;
             listViewGroup1.Header = "World_1";
