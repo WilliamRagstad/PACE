@@ -12,8 +12,17 @@ namespace PointAndClickEngine
 
 		public MainEditorForm(GameProject project)
 		{
-			InitializeComponent();
 			Project = project;
+			InitializeComponent();
+			UpdateEditor();
+		}
+
+		/// <summary>
+		/// Update the game editor form when <c>Project</c> has changed.
+		/// </summary>
+		public void UpdateEditor()
+		{
+			Text = $"Point-and-Click Engine | Game Editor - {Project.Title}";
 		}
 
 		#region Helper functions
