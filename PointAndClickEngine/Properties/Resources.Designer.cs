@@ -63,6 +63,26 @@ namespace PointAndClickEngine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Actions_flag_icon {
+            get {
+                object obj = ResourceManager.GetObject("Actions-flag-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Categories_applications_development_icon {
+            get {
+                object obj = ResourceManager.GetObject("Categories-applications-development-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap editor_background {
             get {
                 object obj = ResourceManager.GetObject("editor_background", resourceCulture);
