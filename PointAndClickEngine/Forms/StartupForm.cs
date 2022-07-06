@@ -20,7 +20,11 @@ namespace PointAndClickEngine
 
 		private void button_newProject_Click(object sender, EventArgs e)
 		{
-			var project = new Models.GameProject();
+			var project = new Models.GameProject()
+			{
+				Title = "Empty Title",
+				Description = "Default PACE game project description."
+			};
 			// Show new project creator form/window that returns a GameProject object.
 			StartEditor(project);
 		}
@@ -45,7 +49,8 @@ This is a project developed by William Rågstad and is free to use.", "PACE | Ab
 					MessageBox.Show("The selected folder does not exist!", "Invalid folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
-				StartEditor(GameObjectSerializer.LoadFile<GameProject>(folderDialog.SelectedPath));
+				var projectFile = EngineConfig.ProjectRootFromFolder(folderDialog.SelectedPath);
+				StartEditor(GameObjectSerializer.LoadFile<GameProject>(projectFile));
 			}
 		}
 	}

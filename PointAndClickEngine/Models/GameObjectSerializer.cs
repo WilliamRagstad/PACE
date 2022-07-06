@@ -14,6 +14,7 @@ namespace PointAndClickEngine.Models
 		private static readonly XmlSerializer _serializer = new XmlSerializer(typeof(GameProject));
 		public static T LoadFile<T>(string filePath)
 		{
+			if (!File.Exists(filePath)) throw new FileNotFoundException("Cannot load the given file, it does not exist!", filePath);
 			FileStream fs = File.OpenRead(filePath);
 			T obj = (T)_serializer.Deserialize(fs);
 			if (obj == null) throw new Exception($"Failed to load file: {filePath}!");

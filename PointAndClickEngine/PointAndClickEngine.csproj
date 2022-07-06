@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -7,11 +7,6 @@
     <StartupObject>PointAndClickEngine.Program</StartupObject>
     <ApplicationIcon>PACE_icon.ico</ApplicationIcon>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="Models\GameObjectSerializer.cs" />
-    <Compile Include="Models\GameObjectSerializer1.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PACE_Controls\PACE_Controls.csproj" />
