@@ -31,6 +31,7 @@ namespace PointAndClickEngine
 			{
 				FormBackgroundPrimary = Color.FromArgb(45, 45, 45),
 				FormTextPrimary = Color.FromKnownColor(KnownColor.ButtonFace),
+				ButtonBorder = Color.FromKnownColor(KnownColor.Crimson)
 			};
 		}
 	}

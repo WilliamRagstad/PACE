@@ -95,7 +95,6 @@
             // 
             // button_selectLocation
             // 
-            this.button_selectLocation.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_selectLocation.Location = new System.Drawing.Point(432, 168);
             this.button_selectLocation.Name = "button_selectLocation";
             this.button_selectLocation.Size = new System.Drawing.Size(51, 40);
