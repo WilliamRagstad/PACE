@@ -16,6 +16,8 @@ namespace PointAndClickEngine.Models
 		public Color? PaceButtonPrimary;
 		public Color? MenuStripBackground;
 		public Color? MenuStripText;
+
+		#region Theme Application Logic
 		public void ApplyOnForm(Form form)
 		{
 			form.BackColor = FormBackgroundPrimary ?? form.BackColor;
@@ -32,5 +34,6 @@ namespace PointAndClickEngine.Models
 				ms.ForeColor = MenuStripText ?? ms.ForeColor;
 			}
 		}
+		#endregion
 	}
 }
