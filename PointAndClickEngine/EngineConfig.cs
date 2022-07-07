@@ -16,17 +16,5 @@ namespace PointAndClickEngine
 		public static string DefaultProjectsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "PACE Projects");
 		public static string ProjectRootFromFolder(string folderPath) =>
 			Path.Combine(folderPath, ProjectRootFile);
-
-		public static class BuiltinThemes
-		{
-			public static EditorTheme Default = new EditorTheme()
-			{
-				FormBackgroundPrimary = Color.FromKnownColor(KnownColor.Control)
-			};
-			public static EditorTheme Dark = new EditorTheme()
-			{
-				FormBackgroundPrimary = Color.FromArgb(45, 45, 45)
-			};
-		}
 	}
 }
