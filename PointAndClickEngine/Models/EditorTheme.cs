@@ -17,6 +17,8 @@ namespace PointAndClickEngine.Models
 		public Color? ButtonBorder;
 		public Color? MenuStripBackground;
 		public Color? MenuStripText;
+		public Color? MenuStripBorder;
+		public Color? ListViewBackground;
 
 		#region Theme Application Logic
 		public void ApplyOnForm(Form form)
@@ -37,6 +39,11 @@ namespace PointAndClickEngine.Models
 				ms.BackColor = MenuStripBackground ?? ms.BackColor;
 				ms.ForeColor = MenuStripText ?? ms.ForeColor;
 			}
+			else if (control is ToolStrip ts)
+			{
+				ts.BackColor = MenuStripBackground ?? ts.BackColor;
+				ts.ForeColor = MenuStripText ?? ts.ForeColor;
+			}
 			else if (control is Label l)
 			{
 				l.ForeColor = FormTextPrimary ?? l.ForeColor;
@@ -46,6 +53,25 @@ namespace PointAndClickEngine.Models
 				btn.ForeColor = FormTextPrimary ?? btn.ForeColor;
 				btn.BackColor = ButtonBackgroundPrimary ?? btn.BackColor;
 				btn.FlatAppearance.BorderColor = ButtonBorder ?? btn.FlatAppearance.BorderColor;
+			}
+			else if (control is SplitContainer sc)
+			{
+				sc.BackColor = FormBackgroundPrimary ?? sc.BackColor;
+				sc.ForeColor = FormTextPrimary ?? sc.ForeColor;
+				foreach (Control c in sc.Panel1.Controls)
+					ApplyOnControl(c);
+				foreach (Control c in sc.Panel2.Controls)
+					ApplyOnControl(c);
+			}
+			else if (control is ListView lw)
+			{
+				lw.BackColor = ListViewBackground ?? lw.BackColor;
+				lw.ForeColor = FormTextPrimary ?? lw.ForeColor;
+			}
+			else if (control is TabControl tab)
+			{
+				tab.BackColor = FormBackgroundPrimary ?? tab.BackColor;
+				tab.ForeColor = FormTextPrimary ?? tab.ForeColor;
 			}
 		}
 		#endregion

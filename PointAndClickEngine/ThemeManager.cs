@@ -30,6 +30,7 @@ namespace PointAndClickEngine
 			public static EditorTheme Dark = new EditorTheme()
 			{
 				FormBackgroundPrimary = Color.FromArgb(45, 45, 45),
+				ListViewBackground = Color.FromArgb(60, 60, 60),
 				FormTextPrimary = Color.FromKnownColor(KnownColor.ButtonFace),
 				ButtonBorder = Color.FromKnownColor(KnownColor.Crimson)
 			};
