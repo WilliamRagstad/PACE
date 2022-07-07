@@ -50,8 +50,10 @@ namespace PointAndClickEngine
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show(@"Welcome to the Point-And-Click adventure game Engine (PACE)!
-This is a project developed by William Rågstad and is free to use.", "PACE | About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			MessageBox.Show($@"Welcome to the Point-And-Click adventure game Engine (PACE)!
+This is a project developed by William Rågstad and is free to use.
+
+Version {EngineConfig.Version}", "PACE | About", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 	}
 }
