@@ -68,10 +68,17 @@ namespace PointAndClickEngine.Models
 				tw.BackColor = TreeViewBackground ?? tw.BackColor;
 				tw.ForeColor = FormTextPrimary ?? tw.ForeColor;
 			}
-			else if (control is TabControl tab)
+			else if (control is TabControl tc)
 			{
-				tab.BackColor = FormBackgroundPrimary ?? tab.BackColor;
-				tab.ForeColor = FormTextPrimary ?? tab.ForeColor;
+				tc.BackColor = FormBackgroundPrimary ?? tc.BackColor;
+				tc.ForeColor = FormTextPrimary ?? tc.ForeColor;
+				foreach (TabPage p in tc.TabPages)
+					ApplyOnControl(p);
+			}
+			else if (control is TabPage tp)
+			{
+				tp.BackColor = FormBackgroundPrimary ?? tp.BackColor;
+				tp.ForeColor = FormTextPrimary ?? tp.ForeColor;
 			}
 		}
 		#endregion
