@@ -73,7 +73,7 @@
             this.textBox_description.Multiline = true;
             this.textBox_description.Name = "textBox_description";
             this.textBox_description.PlaceholderText = "Short description of the game";
-            this.textBox_description.Size = new System.Drawing.Size(278, 71);
+            this.textBox_description.Size = new System.Drawing.Size(458, 71);
             this.textBox_description.TabIndex = 3;
             // 
             // textBox_location
@@ -81,7 +81,7 @@
             this.textBox_location.Location = new System.Drawing.Point(148, 170);
             this.textBox_location.Name = "textBox_location";
             this.textBox_location.ReadOnly = true;
-            this.textBox_location.Size = new System.Drawing.Size(278, 35);
+            this.textBox_location.Size = new System.Drawing.Size(401, 35);
             this.textBox_location.TabIndex = 5;
             // 
             // label3
@@ -95,7 +95,7 @@
             // 
             // button_selectLocation
             // 
-            this.button_selectLocation.Location = new System.Drawing.Point(432, 168);
+            this.button_selectLocation.Location = new System.Drawing.Point(555, 165);
             this.button_selectLocation.Name = "button_selectLocation";
             this.button_selectLocation.Size = new System.Drawing.Size(51, 40);
             this.button_selectLocation.TabIndex = 6;
@@ -110,7 +110,7 @@
             this.button_newProject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_newProject.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_newProject.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_newProject.Location = new System.Drawing.Point(347, 309);
+            this.button_newProject.Location = new System.Drawing.Point(455, 285);
             this.button_newProject.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button_newProject.Name = "button_newProject";
             this.button_newProject.Size = new System.Drawing.Size(174, 49);
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 373);
+            this.ClientSize = new System.Drawing.Size(643, 349);
             this.Controls.Add(this.textBox_namespace);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button_newProject);

@@ -23,7 +23,10 @@ namespace PointAndClickEngine.Forms
 		private void NewProjectForm_Load(object sender, EventArgs e)
 		{
 			TopMost = true;
-			textBox_location.Text = EngineConfig.DefaultProjectsFolder();
+			var defaultProjectFolder = EngineConfig.DefaultProjectsFolder();
+			textBox_location.Text = defaultProjectFolder;
+			if (!Directory.Exists(defaultProjectFolder))
+				Directory.CreateDirectory(defaultProjectFolder);
 		}
 
 		private void error(string msg)
@@ -47,10 +50,11 @@ namespace PointAndClickEngine.Forms
 				else
 				{
 					Directory.CreateDirectory(rootFolder);
-					CreatedProject = new Models.GameProject(rootFolder);
+					CreatedProject = new Models.GameProject();
 					CreatedProject.Title = textBox_title.Text;
 					CreatedProject.Description = textBox_description.Text;
 					CreatedProject.Version = EngineConfig.ProjectVersion;
+					CreatedProject.RootFolder = rootFolder;
 					CreatedProject.Save();
 					DialogResult = DialogResult.OK;
 					Close();

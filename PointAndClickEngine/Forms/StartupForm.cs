@@ -41,7 +41,9 @@ namespace PointAndClickEngine.Forms
 					return;
 				}
 				var projectFile = EngineConfig.ProjectRootFromFolder(folderDialog.SelectedPath);
-				StartEditor(GameObjectSerializer.LoadFile<GameProject>(projectFile));
+				var project = GameObjectSerializer.LoadFile<GameProject>(projectFile);
+				project.RootFolder = folderDialog.SelectedPath;
+				StartEditor(project);
 			}
 		}
 
