@@ -30,10 +30,13 @@ namespace PointAndClickEngine
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainEditorForm));
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("World_1", System.Windows.Forms.HorizontalAlignment.Center);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("room_1");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("room_2");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("room_3");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("room_1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("room_2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("room_3");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("World_1", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3});
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,12 +78,12 @@ namespace PointAndClickEngine
             this.tabPage_map1 = new System.Windows.Forms.TabPage();
             this.nodeGraphNetwork1 = new PACE_Controls.NodeGraphNetwork.NodeGraphNetwork();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.tabControl_mapEditor.SuspendLayout();
@@ -430,8 +433,8 @@ namespace PointAndClickEngine
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
             this.splitContainer1.Panel1.Controls.Add(this.toolStrip2);
-            this.splitContainer1.Panel1.Controls.Add(this.listView1);
             // 
             // splitContainer1.Panel2
             // 
@@ -440,6 +443,24 @@ namespace PointAndClickEngine
             this.splitContainer1.SplitterDistance = 491;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "room_1";
+            treeNode2.Name = "Node2";
+            treeNode2.Text = "room_2";
+            treeNode3.Name = "Node3";
+            treeNode3.Text = "room_3";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "World_1";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode4});
+            this.treeView1.Size = new System.Drawing.Size(491, 674);
+            this.treeView1.TabIndex = 2;
             // 
             // toolStrip2
             // 
@@ -487,35 +508,6 @@ namespace PointAndClickEngine
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 68);
             // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.FullRowSelect = true;
-            listViewGroup1.CollapsedState = System.Windows.Forms.ListViewGroupCollapsedState.Expanded;
-            listViewGroup1.Header = "World_1";
-            listViewGroup1.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            listViewGroup1.Name = "Group 1";
-            this.listView1.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
-            this.listView1.HideSelection = false;
-            listViewItem1.Group = listViewGroup1;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.Group = listViewGroup1;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.Group = listViewGroup1;
-            listViewItem3.StateImageIndex = 0;
-            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(491, 742);
-            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // MainEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
@@ -556,7 +548,6 @@ namespace PointAndClickEngine
         private System.Windows.Forms.TabControl tabControl_mapEditor;
         private System.Windows.Forms.TabPage tabPage_map1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListView listView1;
         private PACE_Controls.NodeGraphNetwork.NodeGraphNetwork nodeGraphNetwork1;
 		private System.Windows.Forms.ToolStrip toolStrip2;
 		private System.Windows.Forms.ToolStripButton newToolStripButton;
@@ -598,6 +589,7 @@ namespace PointAndClickEngine
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
 		private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
+		private System.Windows.Forms.TreeView treeView1;
 	}
 }
 

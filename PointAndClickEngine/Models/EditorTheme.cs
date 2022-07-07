@@ -18,7 +18,7 @@ namespace PointAndClickEngine.Models
 		public Color? MenuStripBackground;
 		public Color? MenuStripText;
 		public Color? MenuStripBorder;
-		public Color? ListViewBackground;
+		public Color? TreeViewBackground;
 
 		#region Theme Application Logic
 		public void ApplyOnForm(Form form)
@@ -63,10 +63,10 @@ namespace PointAndClickEngine.Models
 				foreach (Control c in sc.Panel2.Controls)
 					ApplyOnControl(c);
 			}
-			else if (control is ListView lw)
+			else if (control is TreeView tw)
 			{
-				lw.BackColor = ListViewBackground ?? lw.BackColor;
-				lw.ForeColor = FormTextPrimary ?? lw.ForeColor;
+				tw.BackColor = TreeViewBackground ?? tw.BackColor;
+				tw.ForeColor = FormTextPrimary ?? tw.ForeColor;
 			}
 			else if (control is TabControl tab)
 			{
