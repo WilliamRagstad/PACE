@@ -10,6 +10,8 @@ namespace PACE_Controls.NodeGraphNetwork
 		public int Radius { get; }
 		public Color Color { get; }
 		public Color HoverColor { get; }
+		public Color BorderColor { get; }
+		public int BorderWidth { get; }
 
 		private Color currentColor;
 
@@ -20,11 +22,18 @@ namespace PACE_Controls.NodeGraphNetwork
 			Radius = radius;
 			Color = color;
 			HoverColor = hoverColor;
+			BorderColor = Color.White;
+			BorderWidth = 2;
+
 			currentColor = Color;
 		}
 
-		public override void OnPaint(PaintEventArgs e) =>
+		public override void OnPaint(PaintEventArgs e)
+		{
+			int borderRadius = Radius + BorderWidth;
+			e.Graphics.FillEllipse(new SolidBrush(BorderColor), X - borderRadius, Y - borderRadius, 2 * borderRadius, 2 * borderRadius);
 			e.Graphics.FillEllipse(new SolidBrush(currentColor), X - Radius, Y - Radius, 2 * Radius, 2 * Radius);
+		}
 
 		public bool IsHovered(int mouseX, int mouseY) =>
 			Math.Abs(X - mouseX) <= Radius && Math.Abs(Y - mouseY) <= Radius;
