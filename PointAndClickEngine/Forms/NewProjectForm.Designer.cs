@@ -95,6 +95,7 @@
             // 
             // button_selectLocation
             // 
+            this.button_selectLocation.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button_selectLocation.Location = new System.Drawing.Point(432, 168);
             this.button_selectLocation.Name = "button_selectLocation";
             this.button_selectLocation.Size = new System.Drawing.Size(51, 40);
@@ -115,6 +116,7 @@
             this.button_newProject.Name = "button_newProject";
             this.button_newProject.Size = new System.Drawing.Size(174, 49);
             this.button_newProject.TabIndex = 7;
+            this.button_newProject.Tag = "custom";
             this.button_newProject.Text = "Create";
             this.button_newProject.UseVisualStyleBackColor = false;
             this.button_newProject.Click += new System.EventHandler(this.button_newProject_Click);

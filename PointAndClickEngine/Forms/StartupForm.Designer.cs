@@ -63,6 +63,7 @@ namespace PointAndClickEngine.Forms
             this.button_newProject.Name = "button_newProject";
             this.button_newProject.Size = new System.Drawing.Size(303, 80);
             this.button_newProject.TabIndex = 1;
+            this.button_newProject.Tag = "custom";
             this.button_newProject.Text = "New Project";
             this.button_newProject.UseVisualStyleBackColor = false;
             this.button_newProject.Click += new System.EventHandler(this.button_newProject_Click);
@@ -78,6 +79,7 @@ namespace PointAndClickEngine.Forms
             this.button_loadProject.Name = "button_loadProject";
             this.button_loadProject.Size = new System.Drawing.Size(303, 80);
             this.button_loadProject.TabIndex = 2;
+            this.button_loadProject.Tag = "custom";
             this.button_loadProject.Text = "Load Project";
             this.button_loadProject.UseVisualStyleBackColor = true;
             this.button_loadProject.Click += new System.EventHandler(this.button_loadProject_Click);
@@ -93,6 +95,7 @@ namespace PointAndClickEngine.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(303, 80);
             this.button1.TabIndex = 4;
+            this.button1.Tag = "custom";
             this.button1.Text = "About";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

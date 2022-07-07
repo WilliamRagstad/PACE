@@ -13,7 +13,7 @@ namespace PointAndClickEngine.Models
 	{
 		public Color? FormBackgroundPrimary;
 		public Color? FormTextPrimary;
-		public Color? PaceButtonPrimary;
+		public Color? ButtonBackgroundPrimary;
 		public Color? MenuStripBackground;
 		public Color? MenuStripText;
 
@@ -28,6 +28,8 @@ namespace PointAndClickEngine.Models
 
 		public void ApplyOnControl(Control control)
 		{
+			if (((string)control.Tag ?? "").Contains("custom")) return;
+
 			if (control is MenuStrip ms)
 			{
 				ms.BackColor = MenuStripBackground ?? ms.BackColor;
@@ -36,6 +38,11 @@ namespace PointAndClickEngine.Models
 			else if (control is Label l)
 			{
 				l.ForeColor = FormTextPrimary ?? l.ForeColor;
+			}
+			else if (control is Button btn)
+			{
+				btn.ForeColor = FormTextPrimary ?? btn.ForeColor;
+				btn.BackColor = ButtonBackgroundPrimary ?? btn.BackColor;
 			}
 		}
 		#endregion
