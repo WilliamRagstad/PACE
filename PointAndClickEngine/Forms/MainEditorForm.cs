@@ -22,7 +22,7 @@ namespace PointAndClickEngine
 		/// </summary>
 		public void UpdateEditor()
 		{
-			Text = $"Point-and-Click Engine | Game Editor - {Project.Title}";
+			Text = $"PACE | Game Editor - {Project.Title}";
 		}
 
 		#region Helper functions

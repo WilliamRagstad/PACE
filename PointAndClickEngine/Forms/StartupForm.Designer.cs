@@ -117,7 +117,7 @@ namespace PointAndClickEngine
             this.MaximizeBox = false;
             this.Name = "StartupForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Point-and-Click Engine | Projects";
+            this.Text = "PACE | Projects";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_banner)).EndInit();
             this.ResumeLayout(false);

@@ -528,7 +528,7 @@ namespace PointAndClickEngine
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "MainEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Point-and-Click Engine | Game Editor";
+            this.Text = "PACE | Game Editor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MainEditorForm_Load);
             this.menuStrip1.ResumeLayout(false);
