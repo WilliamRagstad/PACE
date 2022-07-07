@@ -42,6 +42,10 @@ namespace PointAndClickEngine.Forms
 				}
 				var projectFile = EngineConfig.ProjectRootFromFolder(folderDialog.SelectedPath);
 				var project = GameObjectSerializer.LoadFile<GameProject>(projectFile);
+				if (project.Version < EngineConfig.OldestSupportedProjectVersion)
+				{
+					MessageBox.Show($"Project is too old! Version {project.Version} is not supported by this editor, only {EngineConfig.OldestSupportedProjectVersion} and above.");
+				}
 				project.RootFolder = folderDialog.SelectedPath;
 				StartEditor(project);
 			}

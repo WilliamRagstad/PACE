@@ -16,7 +16,7 @@ namespace PointAndClickEngine
 	{
 		public static string Version = "1.0.0-Alpha";
 		public static int ProjectVersion = 1;
-		public static int LastSupportedProjectVersion = 0;
+		public static int OldestSupportedProjectVersion = 1;
 		public static EditorPreferences EditorPreferences = _loadEditorPreferences();
 		public static EditorTheme EditorTheme() => ThemeManager.Load(EditorPreferences.ThemeName);
 		public static string PaceDataFolder() => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PACE");
