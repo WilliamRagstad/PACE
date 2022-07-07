@@ -26,14 +26,11 @@ namespace PointAndClickEngine
 		}
 		public static class Builtins
 		{
-			public static EditorTheme Default = new EditorTheme()
-			{
-				FormBackgroundPrimary = Color.FromKnownColor(KnownColor.Control)
-			};
-
+			public static EditorTheme Default = new EditorTheme();
 			public static EditorTheme Dark = new EditorTheme()
 			{
-				FormBackgroundPrimary = Color.FromArgb(45, 45, 45)
+				FormBackgroundPrimary = Color.FromArgb(45, 45, 45),
+				FormTextPrimary = Color.FromKnownColor(KnownColor.ButtonFace),
 			};
 		}
 	}

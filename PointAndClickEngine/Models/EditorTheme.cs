@@ -33,6 +33,10 @@ namespace PointAndClickEngine.Models
 				ms.BackColor = MenuStripBackground ?? ms.BackColor;
 				ms.ForeColor = MenuStripText ?? ms.ForeColor;
 			}
+			else if (control is Label l)
+			{
+				l.ForeColor = FormTextPrimary ?? l.ForeColor;
+			}
 		}
 		#endregion
 	}
