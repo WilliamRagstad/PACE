@@ -22,9 +22,8 @@ namespace PointAndClickEngine.Forms
 		private void button_newProject_Click(object sender, EventArgs e)
 		{
 			var projectDialog = new NewProjectForm();
-			projectDialog.ShowDialog();
-			// Show new project creator form/window that returns a GameProject object.
-			StartEditor(projectDialog.CreatedProject);
+			if (projectDialog.ShowDialog() == DialogResult.OK)
+				StartEditor(projectDialog.CreatedProject);
 		}
 
 		private void button_loadProject_Click(object sender, EventArgs e)

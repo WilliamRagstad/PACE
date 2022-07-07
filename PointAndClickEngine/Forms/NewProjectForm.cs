@@ -17,24 +17,13 @@ namespace PointAndClickEngine.Forms
 		public NewProjectForm()
 		{
 			InitializeComponent();
+			EngineConfig.EditorTheme().ApplyOnForm(this);
 		}
 
 		private void NewProjectForm_Load(object sender, EventArgs e)
 		{
+			TopMost = true;
 			textBox_location.Text = EngineConfig.DefaultProjectsFolder();
-			/*
-			var folderDialouge = new FolderBrowserDialog()
-			{
-				// RootFolder = EngineConfig.DefaultProjectsFolder(),
-				SelectedPath = EngineConfig.DefaultProjectsFolder(),
-			};
-			var projectFolder = folderDialouge.ShowDialog();
-			var project = new Models.GameProject()
-			{
-				Title = "Empty Title",
-				Description = "Default PACE game project description."
-			};
-			 */
 		}
 
 		private void error(string msg)
@@ -50,7 +39,8 @@ namespace PointAndClickEngine.Forms
 				error("Invalid project folder location.");
 			else if (textBox_namespace.Text.Trim() == "")
 				error("Missing namespace. Must also be valid folder name, recommending to use lowercase and underscores.");
-			else {
+			else
+			{
 				string rootFolder = Path.Combine(textBox_location.Text, textBox_namespace.Text);
 				if (Directory.Exists(rootFolder))
 					error($"The specified location already have a folder with name {textBox_namespace.Text}!");
@@ -61,6 +51,7 @@ namespace PointAndClickEngine.Forms
 					CreatedProject.Title = textBox_title.Text;
 					CreatedProject.Description = textBox_description.Text;
 					CreatedProject.Version = EngineConfig.ProjectVersion;
+					CreatedProject.Save();
 					DialogResult = DialogResult.OK;
 					Close();
 				}
