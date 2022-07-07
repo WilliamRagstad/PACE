@@ -11,7 +11,7 @@ namespace PointAndClickEngine
 		public StartupForm()
 		{
 			InitializeComponent();
-			EngineConfig.EditorPreferences.Theme.ApplyOnForm(this);
+			EngineConfig.EditorTheme().ApplyOnForm(this);
 		}
 
 		private void StartEditor(GameProject project)

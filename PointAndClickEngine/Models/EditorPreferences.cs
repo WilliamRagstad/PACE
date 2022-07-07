@@ -16,6 +16,6 @@ namespace PointAndClickEngine.Models
 		/// <summary>
 		/// Current editor theme.
 		/// </summary>
-		public EditorTheme Theme = BuiltinThemes.Default;
+		public string ThemeName = nameof(ThemeManager.Builtins.Default);
 	}
 }
