@@ -29,18 +29,20 @@ namespace PointAndClickEngine
 
 		private static EditorPreferences _loadEditorPreferences()
 		{
-			EditorPreferences preferences;
 			string pref = EditorPreferencesFilepath();
+			string data = PaceDataFolder();
 			if (File.Exists(pref))
-				preferences = GameObjectSerializer.LoadFile<EditorPreferences>(pref);
-			else
 			{
-				preferences = new EditorPreferences();
-				// Create preferences file in PACE app data
-				if (!Directory.Exists(PaceDataFolder()))
-					Directory.CreateDirectory(PaceDataFolder());
-				GameObjectSerializer.SaveToFile(preferences, pref);
+				try
+				{
+					return GameObjectSerializer.LoadFile<EditorPreferences>(pref);
+				}
+				catch (Exception ex) { /* Create a new preferences file */ }
 			}
+			var preferences = new EditorPreferences();
+			// Create preferences file in PACE app data
+			if (!Directory.Exists(data)) Directory.CreateDirectory(data);
+			GameObjectSerializer.SaveToFile(preferences, pref);
 			return preferences;
 		}
 	}
