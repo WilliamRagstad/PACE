@@ -490,6 +490,7 @@ namespace PointAndClickEngine
             // listView1
             // 
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
             listViewGroup1.CollapsedState = System.Windows.Forms.ListViewGroupCollapsedState.Expanded;
             listViewGroup1.Header = "World_1";
             listViewGroup1.HeaderAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -514,7 +515,6 @@ namespace PointAndClickEngine
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Tile;
             // 
             // MainEditorForm
             // 
