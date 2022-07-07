@@ -4,7 +4,7 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 
-namespace PointAndClickEngine
+namespace PointAndClickEngine.Forms
 {
 	public partial class StartupForm : ExtendedForm
 	{
@@ -21,13 +21,10 @@ namespace PointAndClickEngine
 
 		private void button_newProject_Click(object sender, EventArgs e)
 		{
-			var project = new Models.GameProject()
-			{
-				Title = "Empty Title",
-				Description = "Default PACE game project description."
-			};
+			var projectDialog = new NewProjectForm();
+			projectDialog.ShowDialog();
 			// Show new project creator form/window that returns a GameProject object.
-			StartEditor(project);
+			StartEditor(projectDialog.CreatedProject);
 		}
 
 		private void button_loadProject_Click(object sender, EventArgs e)

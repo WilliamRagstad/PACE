@@ -1,5 +1,5 @@
 ﻿
-namespace PointAndClickEngine
+namespace PointAndClickEngine.Forms
 {
     partial class StartupForm
     {
