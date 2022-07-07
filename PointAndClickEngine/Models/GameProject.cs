@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 namespace PointAndClickEngine.Models
 {
 	[Serializable]
+	[XmlRoot("Project", IsNullable = false)]
 	public class GameProject
 	{
 		public string Title;
