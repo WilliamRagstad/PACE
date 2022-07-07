@@ -29,12 +29,6 @@ namespace PointAndClickEngine
 			StartEditor(project);
 		}
 
-		private void linkLabel_about_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
-		{
-			MessageBox.Show(@"Welcome to the Point-And-Click adventure game Engine (PACE)!
-This is a project developed by William Rågstad and is free to use.", "PACE | About", MessageBoxButtons.OK, MessageBoxIcon.Information);
-		}
-
 		private void button_loadProject_Click(object sender, EventArgs e)
 		{
 			var folderDialog = new FolderBrowserDialog()
@@ -52,6 +46,12 @@ This is a project developed by William Rågstad and is free to use.", "PACE | Ab
 				var projectFile = EngineConfig.ProjectRootFromFolder(folderDialog.SelectedPath);
 				StartEditor(GameObjectSerializer.LoadFile<GameProject>(projectFile));
 			}
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			MessageBox.Show(@"Welcome to the Point-And-Click adventure game Engine (PACE)!
+This is a project developed by William Rågstad and is free to use.", "PACE | About", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 	}
 }

@@ -33,7 +33,7 @@ namespace PointAndClickEngine
             this.pictureBox_banner = new System.Windows.Forms.PictureBox();
             this.button_newProject = new System.Windows.Forms.Button();
             this.button_loadProject = new System.Windows.Forms.Button();
-            this.linkLabel_about = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_banner)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,67 +47,63 @@ namespace PointAndClickEngine
             this.pictureBox_banner.Location = new System.Drawing.Point(0, 0);
             this.pictureBox_banner.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.pictureBox_banner.Name = "pictureBox_banner";
-            this.pictureBox_banner.Size = new System.Drawing.Size(739, 276);
+            this.pictureBox_banner.Size = new System.Drawing.Size(553, 207);
             this.pictureBox_banner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_banner.TabIndex = 0;
             this.pictureBox_banner.TabStop = false;
             // 
             // button_newProject
             // 
-            this.button_newProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_newProject.BackColor = System.Drawing.Color.Crimson;
             this.button_newProject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_newProject.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_newProject.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_newProject.Location = new System.Drawing.Point(214, 326);
+            this.button_newProject.Location = new System.Drawing.Point(123, 258);
             this.button_newProject.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button_newProject.Name = "button_newProject";
             this.button_newProject.Size = new System.Drawing.Size(303, 80);
             this.button_newProject.TabIndex = 1;
-            this.button_newProject.Text = "Create new project";
+            this.button_newProject.Text = "New Project";
             this.button_newProject.UseVisualStyleBackColor = false;
             this.button_newProject.Click += new System.EventHandler(this.button_newProject_Click);
             // 
             // button_loadProject
             // 
-            this.button_loadProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_loadProject.BackColor = System.Drawing.Color.Crimson;
             this.button_loadProject.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_loadProject.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_loadProject.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button_loadProject.Location = new System.Drawing.Point(214, 428);
+            this.button_loadProject.Location = new System.Drawing.Point(123, 350);
             this.button_loadProject.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.button_loadProject.Name = "button_loadProject";
             this.button_loadProject.Size = new System.Drawing.Size(303, 80);
             this.button_loadProject.TabIndex = 2;
-            this.button_loadProject.Text = "Load project";
+            this.button_loadProject.Text = "Load Project";
             this.button_loadProject.UseVisualStyleBackColor = true;
             this.button_loadProject.Click += new System.EventHandler(this.button_loadProject_Click);
             // 
-            // linkLabel_about
+            // button1
             // 
-            this.linkLabel_about.AutoSize = true;
-            this.linkLabel_about.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.linkLabel_about.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.linkLabel_about.Location = new System.Drawing.Point(0, 562);
-            this.linkLabel_about.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.linkLabel_about.Name = "linkLabel_about";
-            this.linkLabel_about.Size = new System.Drawing.Size(70, 30);
-            this.linkLabel_about.TabIndex = 3;
-            this.linkLabel_about.TabStop = true;
-            this.linkLabel_about.Text = "About";
-            this.linkLabel_about.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.linkLabel_about.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_about_LinkClicked);
+            this.button1.BackColor = System.Drawing.Color.Crimson;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(123, 483);
+            this.button1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(303, 80);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "About";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StartupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(739, 592);
-            this.Controls.Add(this.linkLabel_about);
+            this.ClientSize = new System.Drawing.Size(553, 610);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_loadProject);
             this.Controls.Add(this.button_newProject);
             this.Controls.Add(this.pictureBox_banner);
@@ -121,7 +117,6 @@ namespace PointAndClickEngine
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_banner)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -130,6 +125,6 @@ namespace PointAndClickEngine
         private System.Windows.Forms.PictureBox pictureBox_banner;
         private System.Windows.Forms.Button button_newProject;
         private System.Windows.Forms.Button button_loadProject;
-        private System.Windows.Forms.LinkLabel linkLabel_about;
-    }
+		private System.Windows.Forms.Button button1;
+	}
 }
