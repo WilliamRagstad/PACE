@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace PointAndClickEngine.Models
 {
+	/// <summary>
+	/// Defaults to standard perferences.
+	/// Intended to be saved and loaded from file in appdata.
+	/// </summary>
 	[Serializable]
 	public class EditorPreferences
 	{
-		public EditorTheme Theme;
+		/// <summary>
+		/// Current editor theme.
+		/// </summary>
+		public EditorTheme Theme = BuiltinThemes.Default;
 	}
 }

@@ -13,10 +13,10 @@ namespace PointAndClickEngine
 	{
 		public static string Version = "1.0.0-Alpha";
 		public static EditorPreferences EditorPreferences = _loadEditorPreferences();
-		public static string PaceDataFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PACE");
+		public static string PaceDataFolder() => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "PACE");
 		public static string DefaultProjectsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "PACE Projects");
 		public static string ProjectRootFilename = "project.xml";
-		public static string EditorPreferencesFilepath = Path.Combine(PaceDataFolder, "preferences.xml");
+		public static string EditorPreferencesFilepath() => Path.Combine(PaceDataFolder(), "preferences.xml");
 
 		public static string ProjectRootFromFolder(string folderPath) =>
 			Path.Combine(folderPath, ProjectRootFilename);
@@ -24,14 +24,16 @@ namespace PointAndClickEngine
 		private static EditorPreferences _loadEditorPreferences()
 		{
 			EditorPreferences preferences;
-			if (File.Exists(EditorPreferencesFilepath))
-				preferences = GameObjectSerializer.LoadFile<EditorPreferences>(EditorPreferencesFilepath);
+			string pref = EditorPreferencesFilepath();
+			if (File.Exists(pref))
+				preferences = GameObjectSerializer.LoadFile<EditorPreferences>(pref);
 			else
 			{
 				preferences = new EditorPreferences();
 				// Create preferences file in PACE app data
-				Directory.CreateDirectory(PaceDataFolder);
-				GameObjectSerializer.SaveToFile(preferences, EditorPreferencesFilepath);
+				if (!Directory.Exists(PaceDataFolder()))
+					Directory.CreateDirectory(PaceDataFolder());
+				GameObjectSerializer.SaveToFile(preferences, pref);
 			}
 			return preferences;
 		}
