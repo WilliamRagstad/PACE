@@ -15,7 +15,6 @@ namespace PointAndClickEngine.Models
 	[XmlRoot("Preferences", IsNullable = false)]
 	public class EditorPreferences
 	{
-		[XmlElement("Language")]
 		public string Language = "sv";
 		/// <summary>
 		/// Current editor theme.
