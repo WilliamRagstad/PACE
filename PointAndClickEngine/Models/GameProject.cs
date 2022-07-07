@@ -19,5 +19,7 @@ namespace PointAndClickEngine.Models
 		public string RootFolder; // Set when loading a project
 
 		public GameProject(string rootFolder) { RootFolder = rootFolder; }
+		public void Save() =>
+			GameObjectSerializer.SaveToFile(this, Path.Combine(RootFolder, EngineConfig.ProjectRootFilename));
 	}
 }
