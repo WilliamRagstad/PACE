@@ -396,7 +396,7 @@ namespace PointAndClickEngine
             this.tabControl_mapEditor.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tabControl_mapEditor.Name = "tabControl_mapEditor";
             this.tabControl_mapEditor.SelectedIndex = 0;
-            this.tabControl_mapEditor.Size = new System.Drawing.Size(983, 742);
+            this.tabControl_mapEditor.Size = new System.Drawing.Size(1202, 742);
             this.tabControl_mapEditor.TabIndex = 3;
             // 
             // tabPage_map1
@@ -406,7 +406,7 @@ namespace PointAndClickEngine
             this.tabPage_map1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.tabPage_map1.Name = "tabPage_map1";
             this.tabPage_map1.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.tabPage_map1.Size = new System.Drawing.Size(975, 699);
+            this.tabPage_map1.Size = new System.Drawing.Size(1194, 699);
             this.tabPage_map1.TabIndex = 0;
             this.tabPage_map1.Text = "tabPage1";
             this.tabPage_map1.UseVisualStyleBackColor = true;
@@ -419,13 +419,14 @@ namespace PointAndClickEngine
             this.nodeGraphNetwork1.Location = new System.Drawing.Point(5, 6);
             this.nodeGraphNetwork1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.nodeGraphNetwork1.Name = "nodeGraphNetwork1";
-            this.nodeGraphNetwork1.Size = new System.Drawing.Size(965, 687);
+            this.nodeGraphNetwork1.Size = new System.Drawing.Size(1184, 687);
             this.nodeGraphNetwork1.TabIndex = 0;
             this.nodeGraphNetwork1.Text = "nodeGraphNetwork1";
             this.nodeGraphNetwork1.Click += new System.EventHandler(this.nodeGraphNetwork1_Click);
             // 
             // splitContainer1
             // 
+            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 82);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -440,7 +441,7 @@ namespace PointAndClickEngine
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl_mapEditor);
             this.splitContainer1.Size = new System.Drawing.Size(1481, 742);
-            this.splitContainer1.SplitterDistance = 491;
+            this.splitContainer1.SplitterDistance = 272;
             this.splitContainer1.SplitterWidth = 7;
             this.splitContainer1.TabIndex = 4;
             // 
@@ -459,7 +460,7 @@ namespace PointAndClickEngine
             treeNode4.Text = "World_1";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode4});
-            this.treeView1.Size = new System.Drawing.Size(491, 674);
+            this.treeView1.Size = new System.Drawing.Size(272, 674);
             this.treeView1.TabIndex = 2;
             // 
             // toolStrip2
@@ -473,7 +474,7 @@ namespace PointAndClickEngine
             this.toolStripSeparator1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 674);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(491, 68);
+            this.toolStrip2.Size = new System.Drawing.Size(272, 68);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
