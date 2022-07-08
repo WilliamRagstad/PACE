@@ -426,7 +426,6 @@ namespace PointAndClickEngine
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 82);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
