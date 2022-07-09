@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace PointAndClickEngine.Models
 		public Color? MenuStripText;
 		public Color? MenuStripBorder;
 		public Color? TreeViewBackground;
+		public Color? ToolstripSeparator;
 
 		#region Theme Application Logic
 		public void ApplyOnForm(Form form)
@@ -38,11 +40,15 @@ namespace PointAndClickEngine.Models
 			{
 				ms.BackColor = MenuStripBackground ?? ms.BackColor;
 				ms.ForeColor = MenuStripText ?? ms.ForeColor;
+				foreach (ToolStripItem c in ms.Items)
+					ApplyOnComponent(c);
 			}
 			else if (control is ToolStrip ts)
 			{
 				ts.BackColor = MenuStripBackground ?? ts.BackColor;
 				ts.ForeColor = MenuStripText ?? ts.ForeColor;
+				foreach (ToolStripItem c in ts.Items)
+					ApplyOnComponent(c);
 			}
 			else if (control is Label l)
 			{
@@ -79,6 +85,14 @@ namespace PointAndClickEngine.Models
 			{
 				tp.BackColor = FormBackgroundPrimary ?? tp.BackColor;
 				tp.ForeColor = FormTextPrimary ?? tp.ForeColor;
+			}
+		}
+
+		public void ApplyOnComponent(Component component)
+		{
+			if (component is ToolStripSeparator tss)
+			{
+				tss.ForeColor = ToolstripSeparator ?? tss.ForeColor;
 			}
 		}
 		#endregion

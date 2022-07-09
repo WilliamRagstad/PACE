@@ -32,7 +32,8 @@ namespace PointAndClickEngine
 				FormBackgroundPrimary = Color.FromArgb(45, 45, 45),
 				TreeViewBackground = Color.FromArgb(60, 60, 60),
 				FormTextPrimary = Color.FromKnownColor(KnownColor.ButtonFace),
-				ButtonBorder = Color.FromKnownColor(KnownColor.Crimson)
+				ButtonBorder = Color.FromKnownColor(KnownColor.Crimson),
+				ToolstripSeparator = Color.Red
 			};
 		}
 	}
