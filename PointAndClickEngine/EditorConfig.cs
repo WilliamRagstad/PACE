@@ -12,7 +12,7 @@ namespace PointAndClickEngine
 	/// <summary>
 	/// Static class holding the global application state and hard-coded values.
 	/// </summary>
-	internal static class EngineConfig
+	internal static class EditorConfig
 	{
 		public static string Version = "1.0.0-Alpha";
 		public static int ProjectVersion = 1;

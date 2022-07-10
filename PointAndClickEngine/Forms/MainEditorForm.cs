@@ -14,7 +14,7 @@ namespace PointAndClickEngine
 		{
 			Project = project;
 			InitializeComponent();
-			EngineConfig.EditorTheme().ApplyOnForm(this);
+			EditorConfig.EditorTheme().ApplyOnForm(this);
 			UpdateEditor();
 		}
 

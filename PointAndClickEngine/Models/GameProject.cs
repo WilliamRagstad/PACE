@@ -21,6 +21,6 @@ namespace PointAndClickEngine.Models
 		public List<GameWorld> Worlds;
 
 		public void Save() =>
-			GameObjectSerializer.SaveToFile(this, Path.Combine(RootFolder, EngineConfig.ProjectRootFilename));
+			GameObjectSerializer.SaveToFile(this, Path.Combine(RootFolder, EditorConfig.ProjectRootFilename));
 	}
 }

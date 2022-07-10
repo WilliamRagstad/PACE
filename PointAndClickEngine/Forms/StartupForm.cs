@@ -11,7 +11,7 @@ namespace PointAndClickEngine.Forms
 		public StartupForm()
 		{
 			InitializeComponent();
-			EngineConfig.EditorTheme().ApplyOnForm(this);
+			EditorConfig.EditorTheme().ApplyOnForm(this);
 		}
 
 		private void StartEditor(GameProject project)
@@ -40,11 +40,11 @@ namespace PointAndClickEngine.Forms
 					MessageBox.Show("The selected folder does not exist!", "Invalid folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					return;
 				}
-				var projectFile = EngineConfig.ProjectRootFromFolder(folderDialog.SelectedPath);
+				var projectFile = EditorConfig.ProjectRootFromFolder(folderDialog.SelectedPath);
 				var project = GameObjectSerializer.LoadFile<GameProject>(projectFile);
-				if (project.Version < EngineConfig.OldestSupportedProjectVersion)
+				if (project.Version < EditorConfig.OldestSupportedProjectVersion)
 				{
-					MessageBox.Show($"Project is too old! Version {project.Version} is not supported by this editor, only {EngineConfig.OldestSupportedProjectVersion} and above.");
+					MessageBox.Show($"Project is too old! Version {project.Version} is not supported by this editor, only {EditorConfig.OldestSupportedProjectVersion} and above.");
 				}
 				project.RootFolder = folderDialog.SelectedPath;
 				StartEditor(project);
@@ -56,7 +56,7 @@ namespace PointAndClickEngine.Forms
 			MessageBox.Show($@"Welcome to the Point-And-Click adventure game Engine (PACE)!
 This is a project developed by William Rågstad and is free to use.
 
-Version {EngineConfig.Version}", "PACE | About", MessageBoxButtons.OK, MessageBoxIcon.Information);
+Version {EditorConfig.Version}", "PACE | About", MessageBoxButtons.OK, MessageBoxIcon.Information);
 		}
 	}
 }

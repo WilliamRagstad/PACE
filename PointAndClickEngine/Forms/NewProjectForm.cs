@@ -17,13 +17,13 @@ namespace PointAndClickEngine.Forms
 		public NewProjectForm()
 		{
 			InitializeComponent();
-			EngineConfig.EditorTheme().ApplyOnForm(this);
+			EditorConfig.EditorTheme().ApplyOnForm(this);
 		}
 
 		private void NewProjectForm_Load(object sender, EventArgs e)
 		{
 			TopMost = true;
-			var defaultProjectFolder = EngineConfig.DefaultProjectsFolder();
+			var defaultProjectFolder = EditorConfig.DefaultProjectsFolder();
 			textBox_location.Text = defaultProjectFolder;
 			if (!Directory.Exists(defaultProjectFolder))
 				Directory.CreateDirectory(defaultProjectFolder);
@@ -53,7 +53,7 @@ namespace PointAndClickEngine.Forms
 					CreatedProject = new Models.GameProject();
 					CreatedProject.Title = textBox_title.Text;
 					CreatedProject.Description = textBox_description.Text;
-					CreatedProject.Version = EngineConfig.ProjectVersion;
+					CreatedProject.Version = EditorConfig.ProjectVersion;
 					CreatedProject.RootFolder = rootFolder;
 					CreatedProject.Save();
 					DialogResult = DialogResult.OK;
