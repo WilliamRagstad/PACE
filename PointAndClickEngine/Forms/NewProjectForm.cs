@@ -34,7 +34,8 @@ namespace PointAndClickEngine.Forms
 			try
 			{
 				ProjectHelper.ValidateProject(CreatedProject);
-				CreatedProject.Save();
+				CreatedProject.Save(); // Save project root file
+				ProjectHelper.SetupFolderStructure(CreatedProject);
 				DialogResult = DialogResult.OK;
 				Close();
 			}
