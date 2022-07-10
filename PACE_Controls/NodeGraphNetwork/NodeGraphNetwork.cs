@@ -86,13 +86,15 @@ namespace PACE_Controls.NodeGraphNetwork
 				found.OnNodeHoverEnter(this, new NodeHoverEnterEventArgs(found));
 				this.InvokePaint(this, new PaintEventArgs(CreateGraphics(), ClientRectangle));
 			}
+			// Update cursor
+			if (found != null) Cursor.Current = Cursors.Hand;
+			else Cursor.Current = Cursors.Default;
 			_previousHoveredNode = found;
 		}
 
 		private void HandleResize(object sender, EventArgs e)
 		{
 			_needsRedraw = true;
-			// _redraw();
 		}
 	}
 }
