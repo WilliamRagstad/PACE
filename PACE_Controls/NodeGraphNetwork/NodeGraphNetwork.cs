@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.Serialization;
 using System.Windows.Forms;
 using PACE_Controls.NodeGraphNetwork.Events;
 
