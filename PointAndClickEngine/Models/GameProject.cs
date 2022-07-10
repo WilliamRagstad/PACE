@@ -12,11 +12,15 @@ namespace PointAndClickEngine.Models
 		public string Title;
 		public string Description;
 		public int Version;
+		public string Namespace;
 		[XmlIgnore]
 		public string RootFolder; // Set when loading a project
 		public List<GameWorld> Worlds;
 
-		public void Save() =>
+		public void Save()
+		{
+			ProjectHelper.EnsureFolder(RootFolder);
 			GameObjectSerializer.SaveToFile(this, Path.Combine(RootFolder, EditorConfig.ProjectRootFilename));
+		}
 	}
 }

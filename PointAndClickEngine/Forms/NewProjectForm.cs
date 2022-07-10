@@ -16,44 +16,32 @@ namespace PointAndClickEngine.Forms
 		private void NewProjectForm_Load(object sender, EventArgs e)
 		{
 			TopMost = true;
-			var defaultProjectFolder = EditorConfig.DefaultProjectsFolder();
-			textBox_location.Text = defaultProjectFolder;
-			if (!Directory.Exists(defaultProjectFolder))
-				Directory.CreateDirectory(defaultProjectFolder);
-		}
-
-		private void error(string msg)
-		{
-			MessageBox.Show(msg, "Failed to create project", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			var folder = EditorConfig.DefaultProjectsFolder();
+			textBox_location.Text = folder;
+			ProjectHelper.EnsureFolder(folder);
 		}
 
 		private void button_newProject_Click(object sender, EventArgs e)
 		{
-			if (textBox_title.Text.Trim() == "") error("Missing title.");
-			else if (textBox_description.Text.Trim() == "") error("Missing description.");
-			else if (textBox_location.Text.Trim() == "" || !Directory.Exists(textBox_location.Text))
-				error("Invalid project folder location.");
-			else if (textBox_namespace.Text.Trim() == "")
-				error("Missing namespace. Must also be valid folder name, recommending to use lowercase and underscores.");
-			else
+			CreatedProject = new Models.GameProject()
 			{
-				string rootFolder = Path.Combine(textBox_location.Text, textBox_namespace.Text);
-				if (Directory.Exists(rootFolder))
-					error($"The specified location already have a folder with name {textBox_namespace.Text}!");
-				else
-				{
-					Directory.CreateDirectory(rootFolder);
-					CreatedProject = new Models.GameProject();
-					CreatedProject.Title = textBox_title.Text;
-					CreatedProject.Description = textBox_description.Text;
-					CreatedProject.Version = EditorConfig.ProjectVersion;
-					CreatedProject.RootFolder = rootFolder;
-					CreatedProject.Save();
-					DialogResult = DialogResult.OK;
-					Close();
-				}
+				Title = textBox_title.Text,
+				Description = textBox_description.Text,
+				Version = EditorConfig.ProjectVersion,
+				Namespace = textBox_namespace.Text,
+				RootFolder = Path.Combine(textBox_location.Text, textBox_namespace.Text)
+			};
+			try
+			{
+				ProjectHelper.ValidateProject(CreatedProject);
+				CreatedProject.Save();
+				DialogResult = DialogResult.OK;
+				Close();
 			}
-
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Failed to create project", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)
