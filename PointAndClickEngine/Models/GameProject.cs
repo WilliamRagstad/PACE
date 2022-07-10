@@ -14,7 +14,7 @@ namespace PointAndClickEngine.Models
 		public int Version;
 		public string Namespace;
 		[XmlIgnore]
-		public string RootFolder; // Set when loading a project
+		public string RootFolder;
 		public List<GameWorld> Worlds;
 
 		public void Save()
