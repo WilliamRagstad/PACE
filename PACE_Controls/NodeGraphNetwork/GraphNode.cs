@@ -15,6 +15,6 @@ namespace PACE_Controls.NodeGraphNetwork
 		public int X { get; }
 		public int Y { get; }
 
-		public abstract void OnPaint(PaintEventArgs e);
+		public abstract void OnPaint(PaintEventArgs e, bool parentDrawn);
 	}
 }

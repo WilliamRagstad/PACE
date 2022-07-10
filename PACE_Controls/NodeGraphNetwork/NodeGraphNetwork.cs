@@ -14,11 +14,13 @@ namespace PACE_Controls.NodeGraphNetwork
 		private List<GraphNode> _nodes;
 		private Point _offset = new Point(0, 0);
 		private float _scale = 1.0f;
+		private bool _needsRedraw = true; // Initial
 		public NodeGraphNetwork()
 		{
 			_nodes = new List<GraphNode>();
 			MouseMove += HandleMouseMove;
 			Click += HandleClick;
+			Resize += HandleResize;
 		}
 
 		public void AddNode(GraphNode node)
@@ -36,9 +38,14 @@ namespace PACE_Controls.NodeGraphNetwork
 		private void _redraw() => OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
 		protected override void OnPaint(PaintEventArgs e)
 		{
-			base.OnPaint(e);
-			if (MapImage != null) e.Graphics.DrawImage(MapImage, _offset);
-			_nodes.ForEach(n => n.OnPaint(e));
+			if (_needsRedraw)
+			{
+				base.OnPaint(e);
+				if (MapImage != null)
+					e.Graphics.DrawImage(MapImage, _offset);
+			}
+			_nodes.ForEach(n => n.OnPaint(e, _needsRedraw));
+			_needsRedraw = false;
 		}
 
 		private List<IGraphNodeHoverable> _getHoveredNodes()
@@ -80,6 +87,12 @@ namespace PACE_Controls.NodeGraphNetwork
 				this.InvokePaint(this, new PaintEventArgs(CreateGraphics(), ClientRectangle));
 			}
 			_previousHoveredNode = found;
+		}
+
+		private void HandleResize(object sender, EventArgs e)
+		{
+			_needsRedraw = true;
+			// _redraw();
 		}
 	}
 }

@@ -13,6 +13,7 @@ namespace PACE_Controls.NodeGraphNetwork
 		public Color BorderColor { get; }
 		public int BorderWidth { get; }
 
+		private Color previousColor;
 		private Color currentColor;
 
 		public event EventHandler<NodeClickedEventArgs> NodeClicked;
@@ -28,11 +29,15 @@ namespace PACE_Controls.NodeGraphNetwork
 			currentColor = Color;
 		}
 
-		public override void OnPaint(PaintEventArgs e)
+		public override void OnPaint(PaintEventArgs e, bool parentDrawn)
 		{
-			int borderRadius = Radius + BorderWidth;
-			e.Graphics.FillEllipse(new SolidBrush(BorderColor), X - borderRadius, Y - borderRadius, 2 * borderRadius, 2 * borderRadius);
-			e.Graphics.FillEllipse(new SolidBrush(currentColor), X - Radius, Y - Radius, 2 * Radius, 2 * Radius);
+			if (parentDrawn || previousColor != currentColor)
+			{
+				int borderRadius = Radius + BorderWidth;
+				e.Graphics.FillEllipse(new SolidBrush(BorderColor), X - borderRadius, Y - borderRadius, 2 * borderRadius, 2 * borderRadius);
+				e.Graphics.FillEllipse(new SolidBrush(currentColor), X - Radius, Y - Radius, 2 * Radius, 2 * Radius);
+				previousColor = currentColor;
+			}
 		}
 
 		public bool IsHovered(int mouseX, int mouseY) =>
