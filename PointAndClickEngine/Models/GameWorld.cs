@@ -20,7 +20,7 @@ namespace PointAndClickEngine.Models
 
 		#region Editor Metadata
 		[Serializable]
-		[XmlRoot("Data", IsNullable = false)]
+		[XmlType("WorldMetadata")]
 		public class EditorMetadata
 		{
 			[XmlElement("BackgroundImage")]

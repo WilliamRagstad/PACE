@@ -21,7 +21,7 @@ namespace PointAndClickEngine.Models
 
 		#region Editor Metadata
 		[Serializable]
-		[XmlRoot("Data", IsNullable = false)]
+		[XmlType("RoomMetadata")]
 		public class EditorMetadata
 		{
 			[XmlElement("Location")]
