@@ -417,6 +417,7 @@ namespace PointAndClickEngine
             this.nodeGraphNetwork1.BackgroundImage = global::PointAndClickEngine.Properties.Resources.editor_background;
             this.nodeGraphNetwork1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nodeGraphNetwork1.Location = new System.Drawing.Point(5, 6);
+            this.nodeGraphNetwork1.MapImage = ((System.Drawing.Image)(resources.GetObject("nodeGraphNetwork1.MapImage")));
             this.nodeGraphNetwork1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.nodeGraphNetwork1.Name = "nodeGraphNetwork1";
             this.nodeGraphNetwork1.Size = new System.Drawing.Size(1184, 687);

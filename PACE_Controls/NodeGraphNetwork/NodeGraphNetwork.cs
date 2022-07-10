@@ -9,7 +9,11 @@ namespace PACE_Controls.NodeGraphNetwork
 {
 	public class NodeGraphNetwork : Control
 	{
+
+		public Image MapImage { get; set; }
 		private List<GraphNode> _nodes;
+		private Point _offset = new Point(0, 0);
+		private float _scale = 1.0f;
 		public NodeGraphNetwork()
 		{
 			_nodes = new List<GraphNode>();
@@ -33,6 +37,7 @@ namespace PACE_Controls.NodeGraphNetwork
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
+			if (MapImage != null) e.Graphics.DrawImage(MapImage, _offset);
 			_nodes.ForEach(n => n.OnPaint(e));
 		}
 
