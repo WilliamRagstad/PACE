@@ -51,5 +51,9 @@ namespace PointAndClickEngine
 
 		}
 
+		private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Project.Save();
+		}
 	}
 }

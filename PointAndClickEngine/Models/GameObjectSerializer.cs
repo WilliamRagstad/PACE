@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Serialization;
 
 namespace PointAndClickEngine.Models
@@ -28,10 +29,17 @@ namespace PointAndClickEngine.Models
 		public static void SaveToFile<T>(T obj, string filePath, bool shouldOverride = true)
 		{
 			_serializer = new XmlSerializer(typeof(T));
-			if (File.Exists(filePath) && shouldOverride) File.Delete(filePath);
-			FileStream fs = File.Create(filePath);
-			_serializer.Serialize(fs, obj);
-			fs.Close();
+			try
+			{
+				if (File.Exists(filePath) && shouldOverride) File.Delete(filePath);
+				using FileStream fs = File.Create(filePath);
+				_serializer.Serialize(fs, obj);
+			}
+			catch (Exception ex)
+			{
+				if (MessageBox.Show($"Failed to save file '{filePath}' due to the error below:\n{ex.Message}", "Save failed", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error) == DialogResult.Retry)
+					SaveToFile(obj, filePath, shouldOverride);
+			}
 		}
 	}
 }
