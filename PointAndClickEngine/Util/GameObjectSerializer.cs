@@ -3,7 +3,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace PointAndClickEngine.Models
+namespace PointAndClickEngine
 {
 	public class GameObjectSerializer
 	{
@@ -12,7 +12,7 @@ namespace PointAndClickEngine.Models
 		{
 			_serializer = new XmlSerializer(typeof(T));
 			if (!File.Exists(filePath)) throw new FileNotFoundException("Cannot load the given file, it does not exist!", filePath);
-			FileStream fs = File.OpenRead(filePath);
+			using FileStream fs = File.OpenRead(filePath);
 			T obj = (T)_serializer.Deserialize(fs);
 			if (obj == null) throw new Exception($"Failed to load file: {filePath}!");
 			return obj;
