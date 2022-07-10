@@ -9,7 +9,6 @@ namespace PACE_Controls.NodeGraphNetwork
 {
 	public class NodeGraphNetwork : Control
 	{
-
 		public Image MapImage { get; set; }
 		private List<GraphNode> _nodes;
 		private Point _offset = new Point(0, 0);

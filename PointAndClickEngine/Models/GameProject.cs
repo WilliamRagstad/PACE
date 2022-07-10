@@ -18,6 +18,7 @@ namespace PointAndClickEngine.Models
 		public int Version;
 		[XmlIgnore]
 		public string RootFolder; // Set when loading a project
+		public List<GameWorld> Worlds;
 
 		public void Save() =>
 			GameObjectSerializer.SaveToFile(this, Path.Combine(RootFolder, EngineConfig.ProjectRootFilename));
